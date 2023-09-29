@@ -2,6 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 the [tutorial](https://www.youtube.com/watch?v=Big_aFLmekI) I followed to make this project
 
+## Technologies Used
+
+- [UploadThing](https://uploadthing.com/) (for uploading files)
+- Mux
+
 ## Getting Started
 
 First, run the development server:

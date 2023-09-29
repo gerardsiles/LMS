@@ -126,7 +126,7 @@ export async function DELETE(
 				});
 			}
 		}
-
+		// TODO: Delete section videos
 		const deleted = await db.chapter.delete({
 			where: {
 				id: params.chapterId,
