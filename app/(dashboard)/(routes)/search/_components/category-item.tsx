@@ -40,7 +40,7 @@ const CategoryItem = ({ label, icon: Icon, value }: ICategoryItemProps) => {
 		<button
 			className={cn(
 				'py-2 px-3 text-sm border border-slate-200 rounded-full flex items-center gap-x-1 hover:border-sky-700 transition',
-				isActive && 'border-sky-700 gb-sky-200/20 text-sky-800'
+				isActive && 'border-sky-700 bg-sky-200/20 text-sky-800'
 			)}
 			onClick={handleClick}
 		>
