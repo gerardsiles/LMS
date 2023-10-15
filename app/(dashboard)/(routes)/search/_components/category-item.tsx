@@ -19,7 +19,7 @@ const CategoryItem = ({ label, icon: Icon, value }: ICategoryItemProps) => {
 	const currentCategoryId = searchParams.get('categoryId');
 	const currentTitle = searchParams.get('title');
 
-	const isActive = currentCategoryId === value || currentTitle === value;
+	const isSelected = currentCategoryId === value;
 
 	const handleClick = () => {
 		const url = qs.stringifyUrl(
@@ -27,11 +27,13 @@ const CategoryItem = ({ label, icon: Icon, value }: ICategoryItemProps) => {
 				url: pathname,
 				query: {
 					title: currentTitle,
-					categoryId: isActive ? undefined : value,
+					categoryId: isSelected ? null : value,
 				},
 			},
-			{ skipEmptyString: true, skipNull: true }
+			{ skipNull: true, skipEmptyString: true }
 		);
+
+		router.push(url);
 
 		router.push(url);
 	};
@@ -40,7 +42,7 @@ const CategoryItem = ({ label, icon: Icon, value }: ICategoryItemProps) => {
 		<button
 			className={cn(
 				'py-2 px-3 text-sm border border-slate-200 rounded-full flex items-center gap-x-1 hover:border-sky-700 transition',
-				isActive && 'border-sky-700 bg-sky-200/20 text-sky-800'
+				isSelected && 'border-sky-700 bg-sky-200/20 text-sky-800'
 			)}
 			onClick={handleClick}
 		>
